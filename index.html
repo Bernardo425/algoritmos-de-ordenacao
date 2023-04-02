@@ -60,11 +60,9 @@
 						tamanho da lista e das necessidades específicas da aplicação.</p>
 				</section>
 			</section>
-
 			<section>
 				<h2>QUICK SORT</h2>
 			</section>
-
 			<section>
 				<h3>Introdução</h3>
 				<section>
@@ -79,7 +77,6 @@
 					</p>
 				</section>
 			</section>
-
 			<section>
 				<h3>Funcionamento</h3>
 				<section>
@@ -118,7 +115,6 @@
 					</ul>
 				</section>
 			</section>
-
 			<section>
 				<h2>Complexidade</h2>
 				<section>
@@ -127,7 +123,6 @@
 						algoritmos similares, como o Merge Sort.</p>
 				</section>
 			</section>
-
 			<section>
 				<h2>Estabilidade</h2>
 				<section>
@@ -234,6 +229,114 @@
 						}
 
 
+						</code></pre>
+				</section>
+			</section>
+			<section>
+				<h2>SHELL SORT</h2>
+			</section>
+			<section>
+				<h3>Introdução</h3>
+				<section>
+					<p>ShellSort é uma versão aprimorada do algoritmo de InsertionSort, diferindo pelo fato de no lugar de considerar o vetor a ser ordenado como um único segmento, ele considera vários segmentos sendo aplicado o método de inserção direta em cada um deles. Basicamente o algoritmo passa várias vezes pela lista dividindo o grupo maior em menores. </p>
+				</section>
+				<section>
+					<p>
+						O algoritmo é eficiente mas razão da sua eficiência ainda não é conhecida, pois ninguém ainda foi capaz de analisar o algoritmo a sua análise contém alguns problemas matemáticos muito difíceis. 
+					</p>
+				</section>
+			</section>
+			<section>
+				<h3>Funcionamento</h3>
+				<section>
+					<p>
+						O Shellsort troca elementos distantes um do outro. Os itens separados por h posições são agrupados e ordenados, o valor de h é decrementado seguindo uma sequencia qualquer (não há uma sequencia definitiva) até que atinja o valor unitário, onde a ordenação corresponde ao algoritmo de inserção, mas nesse ponto nenhum elemento precisa se mover para uma posição muito distante.
+					</p>
+				</section>
+			</section>
+			<section>
+				<h3>Complexidade</h3>
+				<section>
+					<p>A complexidade do algoritmo ainda não é conhecida, ninguém ainda foi capaz de encontrar uma fórmula fechada para sua função de complexidade. A sua análise contém alguns problemas matemáticos muito difíceis.
+					</p>
+				</section>
+				<section>
+					<p>
+
+					</p>
+				</section>
+			</section>
+			<section>
+				<h3>Estabilidade</h3>
+				<section>
+					<p>A complexidade do algoritmo ainda não é conhecida, ninguém ainda foi capaz de encontrar uma fórmula fechada para sua função de complexidade. A sua análise contém alguns problemas matemáticos muito difíceis.
+					</p>
+				</section>
+				<section>
+					<p>
+						Quanto a essa característica o algoritmo não é estável
+					</p>
+				</section>
+			</section>
+			<section>
+				<h3>Estabilidade</h3>
+				<section>
+					<p>A complexidade do algoritmo ainda não é conhecida, ninguém ainda foi capaz de encontrar uma fórmula fechada para sua função de complexidade. A sua análise contém alguns problemas matemáticos muito difíceis.
+					</p>
+				</section>
+				<section>
+					<p>
+						Quanto a essa característica o algoritmo não é estável
+					</p>
+				</section>
+			</section>
+			<section>
+				<h3>Representação Gráfica</h3>
+				
+			</section>
+			<section>
+				<h3>Implementação Em C</h3>
+				<section>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						#include <stdio.h>
+
+
+							// Shell sort
+							void shellSort(int v[], int n) {
+							  // Rearrange elements at each n/2, n/4, n/8, ... intervals
+							  for (int interval = n / 2; interval > 0; interval /= 2) {
+								for (int i = interval; i < n; i += 1) {
+								  int temp = v[i];
+								  int j;
+								  for (j = i; j >= interval && v[j - interval] > temp; j -= interval) {
+									v[j] = v[j - interval];
+								  }
+									v[j] = temp;
+								}
+							  }
+							}
+							
+							
+							// Print an array
+							void printv(int v[], int size) {
+							  for (int i = 0; i < size; ++i) {
+								printf("%d  ", v[i]);
+							  }
+							  printf("\n");
+							}
+							
+							
+							// Driver code
+							int main() {
+							  int m[] = {9, 8, 3, 7, 5, 6, 4, 1};
+							  int size = sizeof(m) / sizeof(m[0]);
+							  shellSort(m, size);
+							  printf("Sorted array: \n");
+							  printv(m, size);
+							}
+							
+
+						
 						</code></pre>
 				</section>
 			</section>
