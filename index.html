@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>ALGORITMOS DE ORDENAÇÃO DE DADOS</h2>
+			</section>
+			<section>
+				<h3>Este Trabalho</h3>
+				<section>
+					<p>O Presente trabalho descreve os algoritmos de odenação citados abaixo, baseando-se no
+						funcionamento, complexibilidade, estabilidade, representação gráfica e a devida implementação na
+						linguadem de programação C</p>
+				</section>
+				<section>
+					<ul>
+						<li>Insertion Sort</li>
+						<li>Quick Sort</li>
+						<li>Shel Sort</li>
+						<li>Heap Sort</li>
+						<li>Merge Sort</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h3>INTRODUÇÃO</h3>
+				<section>
+					<P>Os algoritmos de ordenação são um conjunto de procedimentos que visam organizar uma sequência de
+						dados em ordem crescente ou decrescente. </P>
+				</section>
+				<section>
+					<p>Eles são amplamente utilizados em diversas áreas, desde a organização de dados em bancos de dados
+						até a criação de gráficos e tabelas em softwares de análise de dados.</p>
+				</section>
+				<section>
+					<p>
+						Existem vários tipos de algoritmos de ordenação, cada um com suas próprias características e
+						vantagens. Alguns exemplos incluem o Bubble Sort, o Insertion Sort, o Selection Sort, o Merge
+						Sort, o Quick Sort, o Shell Sort e o Heap Sort.
+					</p>
+				</section>
+				<section>
+					<p>A escolha do algoritmo mais adequado depende do tipo de dados que estão sendo ordenados, do
+						tamanho da lista e das necessidades específicas da aplicação.</p>
+				</section>
+			</section>
+
+			<section>
+				<h2>QUICK SORT</h2>
+			</section>
+
+			<section>
+				<h3>Introdução</h3>
+				<section>
+					<p>Quick Sort é um algoritmo eficiente de ordenação por divisão e conquista. Apesar de ser da
+						mesma classe de complexidade do  Merge Sort  e do  Heap Sort , o Quick Sort é na prática o
+						mais veloz deles, pois suas constantes são menores.</p>
+				</section>
+				<section>
+					<p>
+						Foi proposto por Hoare em 1960 e publicado em 1962. É o algoritmo de ordenação interna
+						mais rápido que se conhece para uma ampla variedade de situações.
+					</p>
+				</section>
+			</section>
+
+			<section>
+				<h3>Funcionamento</h3>
+				<section>
+					<p>
+						O funcionamento do Quick Sort baseia-se em uma rotina fundamental cujo nome
+						é particionamento. Particionar significa escolher um número qualquer presente no array,
+						chamado de pivot, e colocá-lo em uma posição tal que todos os elementos à esquerda são
+						menores ou iguais e todos os elementos à direita são maiores.
+					</p>
+				</section>
+				<section>
+					<p>
+						A idéia básica do quick sort é dividir o problema de ordenar um conjunto com n itens em
+						dois sub-problemas menores.
+					</p>
+				</section>
+
+			</section>
+			<section>
+				<h2>Vantagens e Desvantagens</h2>
+				<section>
+					<p>Vantagens</p>
+					<ul>
+						<li>É extremamente eficiente para ordenar arquivos de dados.</li>
+						<li>Necessita de apenas uma pequena pilha como memória auxiliar.</li>
+						<li>Requer O(n log n) comparações em média (caso médio) para ordenar n itens.</li>
+					</ul>
+				</section>
+				<section>
+					<p>Desvantagens</p>
+					<ul>
+						<li>Tem um pior caso O(n2) comparações.</li>
+						<li>Sua implementação é delicada e difícil</li>
+						<li>Um pequeno engano pode levar a efeitos inesperados para algumas entradas de dados.</li>
+						<li>O método não é estável.</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<h2>Complexidade</h2>
+				<section>
+					<p>Sua complexidade no tempo é O(nlogn) no melhor caso e no caso médio e O(n^2) no pior
+						caso. Contudo, em geral, o Quicksort apresenta um desempenho superior a outros
+						algoritmos similares, como o Merge Sort.</p>
+				</section>
+			</section>
+
+			<section>
+				<h2>Estabilidade</h2>
+				<section>
+					<p>O Quick Sort não é um algoritmo estável. O modo como o particiona é implementado
+						permite que elementos iguais troquem de posições relativas durante a sua execução.</p>
+				</section>
+				<section>
+					<p>É possível implementar uma versão estável do Quick Sort, mas para isso, ao invés de trocar
+						o pivot diretamente com a primeira posição, o algoritmo deve fazer sucessivas trocas para
+						“afastar” o pivot até a posição desejada – um processo semelhante à inserção ordenada.
+						Essa implementação, contudo, piora significativamente o desempenho do Quick Sort.</p>
+				</section>
+			</section>
+			<section>
+				<h2>Metodo de partição
+				</h2>
+				<section>
+					<p>Algoritmo para o particionamento</p>
+					<ul>
+						<li>1 - Escolha arbitrariamente um pivô x. </li>
+						<li>2 - Percorra o vetor a partir da esquerda até que v[i] ≥ x. </li>
+						<li>3 - Percorra o vetor a partir da direita até que v[j] ≤ x. </li>
+						<li>4 - Troque v[i] com v[j]. </li>
+						<li>5 - Continue este processo até os apontadores i e j se cruzarem.</li>
+					</ul>
+				</section>
+				<section>
+					<p>Ao final, do algoritmo de partição:</p>
+					<ul>
+						<li>Vetor v[esq..dir] está particionado de tal forma que:</li>
+						<li>Os itens em v[esq], v[esq + 1], ..., v[j] são menores ou iguais a x;</li>
+						<li>Os itens em v[i], v[i + 1], ..., v[dir] são maiores ou iguais a x.</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h2 data-id="code-title">Implementação em C</h2>
+				<section>
+					<p>Particionar usando o esquema de particionamento de Hoare</p>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						int partition(int a[], int low, int high)
+						{
+							int pivot = a[low];
+							int i = low - 1;
+							int j = high + 1;
+							while (1)
+							{
+								do {
+									i++;
+								} while (a[i] < pivot);
+						 
+								do {
+									j--;
+								} while (a[j] > pivot);
+						 
+								if (i >= j) {
+									return j;
+								}
+						 
+								swap(a[i], a[j]);
+							}
+						}
+						
+						</code></pre>
+				</section>
+				<section>
+					<p>Rotina de classificação rápida</p>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						void quicksort(int a[], int low, int high)
+						{
+							// condição básica
+							if (low >= high) {
+								return;
+							}
+						
+							// reorganiza os elementos no pivô
+							int pivot = partition(a, low, high);
+						
+							// se repete no subarray contendo elementos que são menores que o pivô
+							quicksort(a, low, pivot);
+						
+							//recorre em subarray contendo elementos que são maiores que o pivô
+							quicksort(a, pivot + 1, high);
+						}
+
+						
+						</code></pre>
+				</section>
+				<section>
+					<p>Função main()</p>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						int main()
+						{
+							int arr[10] = {12, 8, 9, 12, 4, 3, 9, 29, 10, 1};
+						
+							quicksort(arr, 0, 9);
+							
+							//apresentando o vetor ordenado
+							for (int i = 0; i < N; i++) {
+								printf("%d\n", arr[i]);
+							}
+						
+							return 0;
+						}
+
+
+						</code></pre>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
