@@ -238,11 +238,16 @@
 			<section>
 				<h3>Introdução</h3>
 				<section>
-					<p>ShellSort é uma versão aprimorada do algoritmo de InsertionSort, diferindo pelo fato de no lugar de considerar o vetor a ser ordenado como um único segmento, ele considera vários segmentos sendo aplicado o método de inserção direta em cada um deles. Basicamente o algoritmo passa várias vezes pela lista dividindo o grupo maior em menores. </p>
+					<p>ShellSort é uma versão aprimorada do algoritmo de InsertionSort, diferindo pelo fato de no lugar
+						de considerar o vetor a ser ordenado como um único segmento, ele considera vários segmentos
+						sendo aplicado o método de inserção direta em cada um deles. Basicamente o algoritmo passa
+						várias vezes pela lista dividindo o grupo maior em menores. </p>
 				</section>
 				<section>
 					<p>
-						O algoritmo é eficiente mas razão da sua eficiência ainda não é conhecida, pois ninguém ainda foi capaz de analisar o algoritmo a sua análise contém alguns problemas matemáticos muito difíceis. 
+						O algoritmo é eficiente mas razão da sua eficiência ainda não é conhecida, pois ninguém ainda
+						foi capaz de analisar o algoritmo a sua análise contém alguns problemas matemáticos muito
+						difíceis.
 					</p>
 				</section>
 			</section>
@@ -250,14 +255,19 @@
 				<h3>Funcionamento</h3>
 				<section>
 					<p>
-						O Shellsort troca elementos distantes um do outro. Os itens separados por h posições são agrupados e ordenados, o valor de h é decrementado seguindo uma sequencia qualquer (não há uma sequencia definitiva) até que atinja o valor unitário, onde a ordenação corresponde ao algoritmo de inserção, mas nesse ponto nenhum elemento precisa se mover para uma posição muito distante.
+						O Shellsort troca elementos distantes um do outro. Os itens separados por h posições são
+						agrupados e ordenados, o valor de h é decrementado seguindo uma sequencia qualquer (não há uma
+						sequencia definitiva) até que atinja o valor unitário, onde a ordenação corresponde ao algoritmo
+						de inserção, mas nesse ponto nenhum elemento precisa se mover para uma posição muito distante.
 					</p>
 				</section>
 			</section>
 			<section>
 				<h3>Complexidade</h3>
 				<section>
-					<p>A complexidade do algoritmo ainda não é conhecida, ninguém ainda foi capaz de encontrar uma fórmula fechada para sua função de complexidade. A sua análise contém alguns problemas matemáticos muito difíceis.
+					<p>A complexidade do algoritmo ainda não é conhecida, ninguém ainda foi capaz de encontrar uma
+						fórmula fechada para sua função de complexidade. A sua análise contém alguns problemas
+						matemáticos muito difíceis.
 					</p>
 				</section>
 				<section>
@@ -269,7 +279,9 @@
 			<section>
 				<h3>Estabilidade</h3>
 				<section>
-					<p>A complexidade do algoritmo ainda não é conhecida, ninguém ainda foi capaz de encontrar uma fórmula fechada para sua função de complexidade. A sua análise contém alguns problemas matemáticos muito difíceis.
+					<p>A complexidade do algoritmo ainda não é conhecida, ninguém ainda foi capaz de encontrar uma
+						fórmula fechada para sua função de complexidade. A sua análise contém alguns problemas
+						matemáticos muito difíceis.
 					</p>
 				</section>
 				<section>
@@ -281,7 +293,9 @@
 			<section>
 				<h3>Estabilidade</h3>
 				<section>
-					<p>A complexidade do algoritmo ainda não é conhecida, ninguém ainda foi capaz de encontrar uma fórmula fechada para sua função de complexidade. A sua análise contém alguns problemas matemáticos muito difíceis.
+					<p>A complexidade do algoritmo ainda não é conhecida, ninguém ainda foi capaz de encontrar uma
+						fórmula fechada para sua função de complexidade. A sua análise contém alguns problemas
+						matemáticos muito difíceis.
 					</p>
 				</section>
 				<section>
@@ -292,7 +306,7 @@
 			</section>
 			<section>
 				<h3>Representação Gráfica</h3>
-				
+
 			</section>
 			<section>
 				<h3>Implementação Em C</h3>
@@ -340,6 +354,281 @@
 						</code></pre>
 				</section>
 			</section>
+			<section>
+				<h2>Merge Sort</h2>
+			</section>
+			<section>
+				<h3>Introdução</h3>
+				<section>
+					<p>O algoritmo de ordenação Merge Sort é um algoritmo de classificação eficiente e recursivo, que
+						divide a lista em duas metades iguais, ordena cada metade e, em seguida, combina as duas metades
+						ordenadas em uma única lista ordenada.</p>
+				</section>
+				<section>
+					<p>O algoritmo funciona da seguinte maneira:</p>
+					<ul>
+						<li>Divida a lista em duas metades iguais.</li>
+						<li>Ordena recursivamente cada metade.</li>
+						<li>Combina as duas metades ordenadas em uma única lista ordenada.</li>
+					</ul>
+				</section>
+				<section>
+					<p>
+						Divida a lista em duas metades iguais.
+						Ordena recursivamente cada metade.
+						Combina as duas metades ordenadas em uma única lista ordenada.
+					</p>
+				</section>
+				<section>
+					<p>
+						Esse processo de dividir, ordenar e combinar é repetido recursivamente até que a lista inteira
+						seja ordenada.
+					</p>
+				</section>
+				<section>
+					<p>O Merge Sort é um algoritmo eficiente com uma complexidade de tempo de O(nlogn), onde n é o
+						tamanho da lista. Ele é amplamente utilizado na prática, especialmente quando há uma grande
+						quantidade de dados para serem ordenados.</p>
+				</section>
+				<section>
+					<p>Uma das principais vantagens do Merge Sort é que ele é um algoritmo de classificação estável, o
+						que significa que ele preserva a ordem relativa dos elementos com chaves iguais. Além disso, o
+						Merge Sort é adequado para dados armazenados em mídia externa, como arquivos, porque minimiza o
+						número de acessos ao disco.</p>
+				</section>
+				<section>
+					<p>No entanto, o Merge Sort requer uma quantidade adicional de memória para a lista auxiliar durante
+						a etapa de combinação, o que pode ser um problema em algumas situações.</p>
+				</section>
+				<section>
+					<p>O Merge Sort pode ser implementado de forma iterativa ou recursiva. A versão recursiva é mais
+						comum e fácil de entender, mas pode causar problemas de desempenho para listas muito grandes
+						devido à sobrecarga da pilha de chamadas. Já a versão iterativa é mais eficiente em termos de
+						espaço e pode ser mais rápida para listas pequenas.</p>
+				</section>
+				<section>
+					<p>Em resumo, o Merge Sort é um algoritmo de classificação eficiente e estável que divide a lista em
+						duas metades, ordena cada metade e combina as duas metades ordenadas em uma única lista
+						ordenada. Ele é amplamente utilizado em situações em que há uma grande quantidade de dados para
+						serem ordenados e é adequado para dados armazenados em mídia externa. No entanto, requer uma
+						quantidade adicional de memória para a lista auxiliar durante a etapa de combinação</p>
+				</section>
+				<section>
+					<p></p>
+				</section>
+			</section>
+			<section>
+				<h2>Complexidade</h2>
+				<section>
+					<p>
+						A equação de recorrência do Merge Sort é T(n)=2T(n/2)+Θ(n)
+						O termo 2T(n/2) é o tempo para ordenar dois vetores de tamanho n/2, já o termo Θ(n) é o tempo
+						para fundir/intercalar esses vetores, isto é, é o tempo do método merge.
+
+					</p>
+				</section>
+				<section>
+					<p>A equação de recorrência anterior já foi resolvida algumas vezes em postagens anteriores do blog,
+						porém resolveremos de novo.</p>
+				</section>
+				<section>
+					<p>
+						Podemos utilizar o método de Akra-Bazzi ou o método mestre na resolução. Optaremos pelo segundo.
+						De acordo com o teorema mestre, temos
+						a=2, b=2, f(n)=Θ(n)
+
+					</p>
+				</section>
+				<section>
+					<p>
+						Além disso,
+						a =2 =1
+						Como f(n)=Θ(na )=Θ(n), então a equação de recorrência satisfaz o segundo caso do teorema mestre,
+						portanto
+						T(n)=Θ(na )logn)=Θ(nlogn)
+						Ou, equivalentemente, T(n)=O(nlogn). Essa complexidade é a mesma no melhor caso, no caso médio e
+						no pior caso.
+
+					</p>
+				</section>
+			</section>
+			<section>
+				<h3>Implementação em C</h3>
+				<section>
+					<pre data-id="code-animation">
+						<code class="hljs javascript" data-trim data-line-numbers>
+						#include <stdio.h>
+							#include <stdlib.h>
+							
+							static void merge(int A[], int inicio, int meio, int fim) {
+								int tamEsq = meio - inicio + 1; //tamanho do subvetor esquerdo
+								int tamDir = fim - meio; //tamanho do subvetor direito
+								int esq[tamEsq]; //subvetor auxiliar esquerdo
+								int dir[tamDir]; //subvetor auxiliar direito
+								int idxEsq = 0; //índice do subvetor auxiliar esquerdo
+								int idxDir = 0; //índice do subvetor auxiliar direito
+								int i, j, k;
+								
+								//Copia os elementos do subvetor esquerdo para o vetor auxiliar
+								for (i = 0; i < tamEsq; i++) {
+									esq[i] = A[inicio + i];
+								}
+								//Copia os elementos do subvetor direito para o vetor auxiliar
+								for (j = 0; j < tamDir; j++) {
+									dir[j] = A[meio + 1 + j];
+								}
+							
+								//intercala os vetores
+								for (k = inicio; k <= fim; k++) {
+									if (idxEsq < tamEsq) {
+										if (idxDir < tamDir) {
+											if (esq[idxEsq] < dir[idxDir]) {
+												A[k] = esq[idxEsq++];
+											} else {
+												A[k] = dir[idxDir++];
+											}
+										} else {
+											A[k] = esq[idxEsq++];
+										}
+									} else {
+										A[k] = dir[idxDir++];
+									}
+								}
+							}
+							
+							/*
+							 * Algoritmo de ordenação por intercação/fusão
+							 * 
+							 * Adaptado o livro "Algoritmos: teoria e prática" (Cormen et al)
+							 * 
+							 * 'A' é o vetor de inteiros que será ordenado, 'inicio' é o indice inicial
+							 * e 'fim' é o índice final
+							 * Melhor caso: O(n log n)
+							 * Caso médio: O(n log n)
+							 * Pior caso: O(n log n)
+							 */
+							void mergeSort(int A[], int inicio, int fim) {
+								if (inicio < fim) {
+									int meio = (inicio + fim) / 2; //calcula o meio
+									mergeSort(A, inicio, meio); //ordena do subvetor esquerdo
+									mergeSort(A, meio + 1, fim); //ordena do subvetor direito
+									merge(A, inicio, meio, fim); //funde os subvetores esquerdo e direito
+								}
+							}
+							
+							int main() {
+								//testa o merge sort para vetores inteiros
+								int n = 10;
+								int A[10] = {5, 2, 7, 6, 2, 1, 0, 3, 9, 4};
+								printf("A (desordenado) = [%d, %d, %d, %d, %d, %d, %d, %d, %d, %d]\n",
+										A[0], A[1], A[2], A[3], A[4], A[5], A[6], A[7], A[8], A[9]);
+								mergeSort(A, 0, n - 1);
+								printf("A (ordenado) = [%d, %d, %d, %d, %d, %d, %d, %d, %d, %d]\n",
+										A[0], A[1], A[2], A[3], A[4], A[5], A[6], A[7], A[8], A[9]);
+								return 0;
+							}
+							
+
+						
+						</code></pre>
+				</section>
+			</section>
+			<section>
+				<h2>Insertion sort</h2>
+			</section>
+			<section>
+				<h3>Introdução</h3>
+				<section>
+					<p>Insertion sort ou ordenação por inserção é o método(algoritmo) de ordenação que percorre um vetor de elementos da esquerda para a direita e à medida que avança vai ordenando os elementos à esquerda. </p>
+				</section>
+				<section>
+					<p>O Insertion sort é um algoritmo simples e eficiente quando aplicado em pequenas listas. Neste algoritmo a lista é percorrida da esquerda para a direita, à medida que avança vai deixando os elementos mais à esquerda ordenados.
+					</p>
+				</section>
+				<section>
+					<p>O algoritmo funciona da mesma forma que as pessoas usam para ordenar cartas em um jogo de baralho como o pôquer.</p>
+				</section>
+			</section>
+			<section>
+				<h3>Complexidade ou Características</h3>
+				<section>
+					<p>Apesar de ser menos eficiente do que algoritmos como Merge Sort e Quick Sort (de ordem O(nlog(n))), o Insertion Sort possui algumas características consideráveis:
+					</p>
+				</section>
+				<section>
+					<ul>
+						<li>É de simples implementação, leitura e manutenção;</li>
+						<li>In-place: Apenas requer uma quantidade constante de O(1) espaço de memória adicional;</li>
+						<li>Estável: Não muda a ordem relativa de elementos com valores iguais;</li>
+						<li>Útil para pequenas entradas;</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Muitas trocas, e menos comparações;</li>
+						<li>Melhor caso: C(n)=O(n), quando a matriz está ordenado;</li>
+						<li>Médio caso: O(n²/4), quando a matriz tem valores aleatórios sem ordem de classificação (crescente ou decrescente);</li>
+						<li>Pior caso: C(n)=O(n²), quando a matriz está em ordem inversa, daquela que deseja ordenar.</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h3>Vantagens e Desvantagens</h3>
+				<section>
+					<p>Vantagens</p>
+					<ul>
+						<li>É o método a ser utilizado quando o arquivo está "quase" ordenado.</li>
+						<li>É um bom método quando se desejar adicionar poucos elementos em um arquivo já ordenado, pois seu custo é linear.</li>
+						<li>O algoritmo de ordenação por inserção é estável.</li>
+					</ul>
+				</section>
+				<section>
+					<p>Desvantagens</p>
+					<ul>
+						<li>É considerado um método de ordenação estável. </li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h3>Implementação em C</h3>
+				<pre data-id="code-animation">
+					<code class="hljs javascript" data-trim data-line-numbers>
+						#include <math.h>
+							#include <stdio.h>
+							
+							
+							void insertionSort(int arr[], int size){
+								int i, j, key;
+								for (i = 1; i < size; i++) {
+									key = arr[i];
+									j = i - 1;
+									while (j >= 0 && arr[j] > key) {
+										arr[j + 1] = arr[j];
+										j = j - 1;
+									}
+									arr[j + 1] = key;
+								}
+							}
+							
+							
+							void printArray(int arr[], int size){
+								int i;
+								for (i = 0; i < size; i++)
+									printf("%d ", arr[i]);
+								printf("\n");
+							}
+							
+							
+							void main(){
+								int arr[] = { 12, 11, 13, 5, 6 };
+								int size = sizeof(arr) / sizeof(arr[0]);
+								insertionSort(arr, size);
+								printArray(arr, size);
+							}
+							
+					</code>
+				</pre>
+			</section>
 		</div>
 	</div>
 
@@ -348,9 +637,6 @@
 	<script src="plugin/markdown/markdown.js"></script>
 	<script src="plugin/highlight/highlight.js"></script>
 	<script>
-		// More info about initialization & config:
-		// - https://revealjs.com/initialization/
-		// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
 
