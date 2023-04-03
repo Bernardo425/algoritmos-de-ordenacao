@@ -629,6 +629,293 @@
 					</code>
 				</pre>
 			</section>
+
+			<!-- HEAP SORT -->
+			<section data-transition="zoom">
+				<img src="img/heap-capa.gif" alt="">
+				<h2>HEAP SORT</h2>
+
+			</section>
+			<section>
+				<h3>introdução - heap sort</h3>
+				<section>
+					<p>O algoritmo heapsort é um algoritmo de ordenação generalista, e faz parte da família de algoritmos de ordenação por seleção. Foi desenvolvido em 1964 por Robert W. Floyd e J.W.J Williams. </p>
+				</section>
+				<section>
+					<p>
+						Heap sort é uma técnica de classificação baseada em comparação com base na estrutura de dados Binary Heap . É semelhante à classificação por seleção , onde primeiro encontramos o elemento mínimo e colocamos o elemento mínimo no início. Repita o mesmo processo para os restantes elementos.
+					</p>
+				</section>
+				<section>
+					<p>
+						Tem um desempenho em tempo de execução muito bom em conjuntos ordenados aleatoriamente, tem um uso de memória bem comportado e o seu desempenho em pior cenário é praticamente igual ao desempenho em cenário médio. 
+					</p>
+				</section>
+				<section>
+					<p>
+						Alguns algoritmos de ordenação rápidos têm desempenhos espectacularmente ruins no pior cenário, quer em tempo de execução, quer no uso da memória. O heapsort trabalha no lugar e o tempo de execução em pior cenário para ordenar n elementos é de O (n lg n).
+					</p>
+				</section>
+			</section>
+			<section>
+				<h3>HEAP</h3>
+				<section>
+					<p>O Primeiro passo para o entendimento do HEAP SORT é o conhecimento sobre HEAP</p>
+					<p>Um heap é uma árvore, normalmente uma árvore binária, na qual cada nodo filho tem um valor inferior a de seu pai, assim o nódo raiz é o maior nodo da árvore. Também podemos optar por orientar um heap de forma que cada nodo filho tenha um valor superiora de sue pai, neste caso o nodo da raíz é o de menor valor da árvore.</p>
+				</section>
+				<section>
+					<p>
+						Árvores como estas são parcialmente classificadas porque, apesar dos nodos ao longo de cada ramificação terem uma classificação específica, os nodos em um nível não estão necessáriamente calssificados de acordo com a organização dos nodos em outra ramificação.
+					</p>
+				</section>
+				<section>
+					<h4>Tipos de HEAP</h4>
+					<p>Existem dois tipos de heap, que são:</p>
+				</section>
+				<section>
+					<h5>Heap Máximo</h5>
+					<p>Também chamado de pesado em cima,  é um heap em que cada filho é menor que seu pai, isso ocorre porque o maior nodo está no topo e suas propriedades são:</p>
+					<ul>
+						<li>A[pai(i)] >= A[i] => O valor de um nó é no máximo o valor de seu pai</li>
+						<li>O Maior elemento de um heap está na raiz</li>
+						<li>As sub-árvores de um nó possuem valores menores ou iguais ao do nó</li>
+					</ul>
+				</section>
+				<section>
+					<h5> Heap Minimo</h5>
+					<p>Também chamado de pesado em baxo,  é um heap em que cada maior que seu pai, isso ocorre porque o menor nodo está no topo.  e suas propriedades são:</p>
+					<ul>
+						<li>A[pai(i)] <= A[i] => O valor de um nó é maior ou igual ao de seu pai</li>
+						<li>O menor elemento de um heap está na raiz</li>
+						<li>As sub-árvores de um nó possuem valores maiores ou iguais ao do nó</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Organização de um heap</h4>
+					<p>os heaps são balanciados pela esquerda, e os nodos são inseridos na árvore nível após nível, da esquerda para a direita.</p>
+				</section>
+				<section>
+					<p>Considerando um array de indice 0 (zero), isso significa que o pai de cada nodo em uma posição i no array, estará localizado na posição | (i - 1) / 2 |, ignorando a parte fracionaria de (i - 1)/2</p>
+				</section>
+				<section>
+					<ul>
+						<li> Os filhos a esquerda estão localizados nas posições (2 * i + 1);</li>
+						<li> Os filhos a direira estão localizados em (2 * i + 2)</li>
+						<li> O último nodo é aquele mais a esquerda no nível mais profundo.</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h3>Complexidade</h3>
+				<section>
+					<ul>
+						<li>Comparações no pior caso: 2n log2n + O(n) é o mesmo que 2n log n + O(n)</li>
+						<li>Trocas no pior caso: n log2n + O(n) é o mesmo que n log n + O(n)</li>
+						<li>Melhor e pior caso: O(n log2n) é o mesmo que O(n log n)</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h3>Funcionamento</h3>
+				<section>
+					<p>O heapsort utiliza uma estrutura de dados chamada heap, para ordenar os elementos à medida que os insere na estrutura. Assim, ao final das inserções, os elementos podem ser sucessivamente removidos da raiz da heap, na ordem desejada, lembrando-se sempre de manter a propriedade de max-heap. </p>
+				</section>
+				<section>
+					<p>A heap pode ser representada como uma árvore (uma árvore binária com propriedades especiais[1]) ou como um vetor. Para uma ordenação decrescente, deve ser construída uma heap mínima (o menor elemento fica na raiz). Para uma ordenação crescente, deve ser construído uma heap máxima (o maior elemento fica na raiz). </p>
+				</section>
+				<section>
+					<p>O Esquema abaixo mostra o funcionamento do heap sort</p>
+					<img src="img/Heapsort-example.gif" alt="">
+				</section>
+			</section>
+			<section>
+				<h3>Estabilidade</h3>
+				<section>
+					O heapsort não é um algoritmo de ordenação estável. Porém, é possível adaptar a estrutura a ser ordenada de forma a tornar a ordenação estável. Cada elemento da estrutura adaptada deve ficar no formato de um par (elemento original, índice original). Assim, caso dois elementos sejam iguais, o desempate ocorrerá pelo índice na estrutura original. 
+				</section>
+			</section>
+			<section>
+				<h3>Vantagens e desvantagens</h3>
+				<section>
+					<p>Vantagens </p>
+					<ul>
+						<li>Simplicidade –  É mais simples de entender do que outros algoritmos de classificação igualmente eficientes porque não usa conceitos avançados de ciência da computação, como recursão.</li>
+						<li>Uso de memória – O uso de memória é mínimo porque, além do necessário para manter a lista inicial de itens a serem classificados, não precisa de espaço de memória adicional para funcionar</li>
+					</ul>
+				</section>
+				<section>
+					<p>Vantagens</p>
+					<ul>
+						<li>Eficiência –  O tempo necessário para realizar a ordenação do Heap aumenta logaritmicamente, enquanto outros algoritmos podem crescer exponencialmente mais lentos à medida que o número de itens a classificar aumenta. Este algoritmo de ordenação é muito eficiente.</li>
+					</ul>
+				</section>
+				<section>
+					<p>Desvantagens</p>
+					<ul>
+						<li>Caro - a classificação de heap é cara.</li>
+						<li>Instável - a classificação do heap é instável. Pode reorganizar a ordem relativa.</li>
+						<li>Eficiente - Heap Sort não é muito eficiente ao trabalhar com dados altamente complexos. </li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h3>Implementação em C</h3>
+				<section>
+					<pre data-id="code-animation">
+						<code class="hljs javascript" data-trim data-line-numbers>
+							#include <stdio.h>
+							 
+							// Function to swap the position of two elements
+							// função para trocar a posição de dois elementos
+							 
+							void swap(int* a, int* b)
+							{
+							 
+								int temp = *a;
+							 
+								*a = *b;
+							 
+								*b = temp;
+							}
+							 
+							// To heapify a subtree rooted with node i
+							// which is an index in arr[].
+							// n is size of heap
+							void heapify(int arr[], int N, int i)
+							{
+								// Find largest among root, left child and right child
+							 
+								// Initialize largest as root
+								int largest = i;
+							 
+								// left = 2*i + 1
+								int left = 2 * i + 1;
+							 
+								// right = 2*i + 2
+								int right = 2 * i + 2;
+							 
+								// If left child is larger than root
+								if (left < N && arr[left] > arr[largest])
+							 
+									largest = left;
+							 
+								// If right child is larger than largest
+								// so far
+								if (right < N && arr[right] > arr[largest])
+							 
+									largest = right;
+							 
+								// Swap and continue heapifying if root is not largest
+								// If largest is not root
+								if (largest != i) {
+							 
+									swap(&arr[i], &arr[largest]);
+							 
+									// Recursively heapify the affected
+									// sub-tree
+									heapify(arr, N, largest);
+								}
+							}
+							 
+							// Main function to do heap sort
+							void heapSort(int arr[], int N)
+							{
+							 
+								// Build max heap
+								for (int i = N / 2 - 1; i >= 0; i--)
+							 
+									heapify(arr, N, i);
+							 
+								// Heap sort
+								for (int i = N - 1; i >= 0; i--) {
+							 
+									swap(&arr[0], &arr[i]);
+							 
+									// Heapify root element to get highest element at
+									
+									// root novamente
+									heapify(arr, i, 0);
+								}
+							}
+							 
+							// uma função para imprimir o array
+							void printArray(int arr[], int N)
+							{
+								for (int i = 0; i < N; i++)
+									printf("%d ", arr[i]);
+								printf("\n");
+							}
+							 
+							// Função principal
+							int main()
+							{
+								int arr[] = { 12, 11, 13, 5, 6, 7 };
+								int N = sizeof(arr) / sizeof(arr[0]);
+							 
+								// Chamando as funções
+								heapSort(arr, N);
+								printf("Sorted array is\n");
+								printArray(arr, N);
+							}
+						</code>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<h3>Conclusão</h3>
+				<section>
+					<p>
+						Em conclusão, o estudo e implementação de algoritmos de ordenação de dados é fundamental para o desenvolvimento de sistemas eficientes e otimizados. Por meio deste trabalho, aprendemos sobre diversos algoritmos de ordenação, como Selection Sort, Insertion Sort, Merge Sort, Quick Sort e Heap Sort, e entendemos as vantagens e desvantagens de cada um deles.
+					</p>
+				</section>
+				<section>
+					<p>Além disso, aprendemos a importância da análise assintótica, que nos permite avaliar a eficiência de um algoritmo em termos de seu tempo de execução e uso de recursos. Com base nessa análise, pudemos avaliar a complexidade de cada algoritmo e identificar aqueles que são mais adequados para diferentes tipos de conjuntos de dados.</p>
+				</section>
+				<section>
+					<p>Concluímos, portanto, que a escolha do algoritmo de ordenação correto é crucial para obter um desempenho eficiente em sistemas que lidam com grandes quantidades de dados. Embora cada algoritmo tenha suas próprias vantagens e desvantagens, a escolha deve levar em consideração o tamanho do conjunto de dados, a complexidade do algoritmo e as restrições de recursos do sistema.</p>
+				</section>
+				<section>
+					<p>Em resumo, este trabalho foi uma oportunidade valiosa para aprimorar nossos conhecimentos em algoritmos de ordenação e sua aplicação prática, preparando-nos para enfrentar desafios na área de processamento de dados e desenvolvimento de sistemas mais eficientes e otimizados.</p>
+				</section>
+			</section>
+			<section>
+				<h3>Referências Bibliográficas</h3>
+				<section>
+					<ul>
+						<li>Donald Knuth. The Art of Computer Programming, Volume 3: Sorting and Searching, Third Edition. Addison-Wesley, 1997. ISBN 0-201-89685-0. Section 5.2.1: Sorting by Insertion, pp. 80–105.</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. Introduction to Algorithms, Second Edition. MIT Press and McGraw-Hill, 2001. ISBN 0262032937. Section 2.1: Insertion sort, pp. 15–21.</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Michael T Goodrich, Algorithm Desing: Foundations, Analysis and Internet Examples, Second Edition. 2002, ISBN 0-471-38365-1. Section 4.4.6; Comparison of Sorting Algorithms, pp. 244-245.</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Robert Sedgewick, Philippe Flajolet, An Introduction to the Analysis of Algorithms, Second Edition, Pearson Education, 2013. ISBN-13: 978-0-321-90575-8. Section 7.6: Inversions and Insertion Sorts, pp. 384-388.</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Ziviani, N. (2004). Projeto de algoritmos: com implementações em Pascal e C (Vol. 2). Luton: Thomson.</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Soffner, R. (2017). Algoritmos e programação em linguagem C. Saraiva Educação SA.</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Souza, J. E., Ricarte, J. V. G., & de Almeida Lima, N. C. (2017). Algoritmos de Ordenação: Um estudo comparativo. Anais do Encontro de Computação do Oeste Potiguar ECOP/UFERSA (ISSN 2526-7574), (1).</li>
+					</ul>
+				</section>
+			</section>
 		</div>
 	</div>
 
